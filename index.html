@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="Images/payak-icon.png">
+  <title>Payák | Home</title>
+  <!-- Font Style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/dd9593e93d.js" crossorigin="anonymous"></script>
+  <!-- Ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="CSS/index-style.css">
+</head>
+
+<body>
+  <div class="first-container bg-dark text-white align-items-center p-1">
+    <marquee behavior="" direction="left"> <span>PAYAK KASUOTAN ONLINE STORE</span></marquee>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+        <img src="Images/2.png" alt="Payak-Logo" height="45" width="50">
+      </a>
+
+      <div class="order-lg-2 mt-lg-1">
+        <button type="button" class="btn position-relative">
+          <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+        </button>
+      </div>
+
+      <!-- Burger Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
+        <ul class="navbar-nav text-center ms-auto mb-2 mt-2 mb-lg-0 me-lg-3">
+          <li class="nav-item ">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown-center">
+            <a class="nav-link active">Shop</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Pages/kids.html">Kids</a></li>
+              <li><a class="dropdown-item" href="Pages/men.html">Men</a></li>
+              <li><a class="dropdown-item" href="Pages/women.html">Women</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Pages/about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Pages/login.html"><i
+                class="icon fa-solid fa-circle-user me-lg-1"></i>Login</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cart -->
+      <div class="cart">
+        <!-- Cart title -->
+        <h2 class="cart-title m-0">My Cart</h2>
+        <!-- Cart Content -->
+        <div class="cart-content mt-auto">
+
+        </div>
+
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total:</div>
+          <div class="total-price">₱0</div>
+        </div>
+        <!-- Buy Button -->
+        <div class="checkout d-inline-block position-absolute bottom-0">
+
+          <button type="button" class="btn-edit" data-bs-toggle="modal" data-bs-target="#shipping-modal">Edit Shipping
+            Info</button>
+          <button type="button" class="btn-buy">Buy Now</button>
+
+        </div>
+
+        <i class="fa-solid fa-x" id="cart-close"></i>
+
+      </div>
+      <!-- Cart Close -->
+    </div>
+  </nav>
+
+  <!-- Shipping Info -->
+  <div class="modal fade" tabindex="-1" id="shipping-modal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Shipping Form</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row modal-row">
+            <div class="col-50">
+              <div class="container modal-container">
+
+                <div class="row">
+                  <div class="col-50">
+                    <h5>Billing Address</h5>
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="text" id="email" name="email" placeholder="john@example.com">
+                    <label for="email"><i class="fa fa-phone"></i> Contact Number</label>
+                    <input type="text" id="contact" name="contact" placeholder="09876543211">
+                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                    <label for="city"><i class="fa fa-institution"></i> City</label>
+                    <input type="text" id="city" name="city" placeholder="New York">
+
+                    <div class="row">
+                      <div class="col-50">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="NY">
+                      </div>
+                      <div class="col-50">
+                        <label for="zip">Zip</label>
+                        <input type="text" id="zip" name="zip" placeholder="10001">
+                      </div>
+                    </div>
+                    <div class="col-50">
+                      <h5>Payment Method</h5>
+                      <label for="fname" class="text-decoration-underline">Cash On Delivery Only</label>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-save" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brand Name with Tagline -->
+  <section id="header">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h1 class="text-black mb-0">Payák</h1>
+          <p class="text-black">kasuotan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center p-3 g-3">
+      <div class="col-lg col-sm-12">
+        <img src="Images/Barong Tagalog Dress - Filipiniana.webp" alt="Women"
+          class="img-responsive img-resize img-fluid ">
+      </div>
+      <div class="col-lg-5 col-sm-12">
+        <img src="Images//Made to order - Girls Baro't Saya Florel Set.webp" alt="New"
+          class="img-responsive img-resize img-fluid ">
+      </div>
+      <div class="col-lg col-sm-12">
+        <img src="Images/men.webp" alt="Men" class="img-responsive img-resize img-fluid ">
+      </div>
+    </div>
+  </div>
+
+  <!-- New Product -->
+  <section class="shop container">
+    <h2 class="section-title text-center mt-5 mb-4">New Products</h2>
+
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 g-3">
+
+      <!-- Box 1 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Made to order - Girls Baro't Saya Florel Set.webp" alt="New Product 1" width="100%"
+            class="product-img">
+          <h2 class="product-title">Girls Baro't Saya Florel Set</h2>
+          <span class="price">₱350.00</span>
+          <!-- Size Select Box -->
+          <!-- <div class="cart-size">
+              <label  for="">Size:</label>
+                <select class="size" name="size" id="size">
+                  <option value="small">S</option>
+                  <option value="medium">M</option>
+                  <option value="large">L</option>
+                  <option value="xl">XL</option>
+                </select>
+            </div> -->
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Pre-order -Boys' Filipino Costume.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Boys' Filipino Costume</h2>
+          <span class="price">₱250.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Made to order - Girls Baro't Saya Plaid Set.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Girls Baro't Saya Plaid Set</h2>
+          <span class="price">₱350.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+
+      <!-- Box 4 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Girls' Balintawak Gina Dress.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Girls' Balintawak Gina Dress</h2>
+          <span class="price">₱300.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+      <!-- Box 5 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Organza Barong Tagalog with Lining White.webp" alt="New Product 1" width="100%"
+            class="product-img">
+          <h2 class="product-title">Organza Barong Tagalog White</h2>
+          <span class="price">₱500.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+      <!-- Box 6 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Jusi Barong Tagalog Black.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Jusi Barong Tagalog Black</h2>
+          <span class="price">₱750.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+      <!-- Box 7 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Balintawak Gina Dress Pink - Filipiniana.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Balintawak Gina Dress Pink</h2>
+          <span class="price">₱800.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+
+
+      <!-- Box 8 -->
+      <div class="col p-3">
+        <div class="product-box">
+          <img src="Images/Balintawak Gina Dress Purple - Filipiniana.webp" alt="New Product 1" class="product-img">
+          <h2 class="product-title">Balintawak Gina Dress Purple</h2>
+          <span class="price">₱800.00</span>
+          <i class="bx fa-solid fa-shopping-cart add-cart"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Banner Section -->
+  <section id="#sale-text">
+    <div class="container-fluid bg-black text-center w-100 p-5 mt-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <i class="fa-sharp fa-solid fa-arrow-right me-auto"></i>
+        <a href="Pages/login.html" class="sale-text text-white mt-3">Get 10% Off in Your First Order</a>
+        <i class="fa-sharp fa-solid fa-arrow-left ms-auto"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size Chart -->
+  <div class="container mt-lg-3 p-4 mb-0">
+    <h1 class="size-title text-center p-4 mb-3">Filipiniana & Barong Size Charts</h1>
+    <div class="size-text border-bottom">
+      <h5>Instruction for Men's Size:</h5>
+      <p>Select your usual shirt measurement usually fits perfectly as the size chart below has the added allowance
+        necessary already or 1 size higher if you have a western body type. <span class="fw-bold">TO BE SURE, MEASURE
+          YOURSELF IN THE CHEST OR WAIST WHICH EVER THE BIGGER, ADD 4 INCHES</span> and then look at the size chart
+        below. Usually barong tagalogs are loose fit for comfort.</p>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-sm-12">
+        <img src="Images/men-size.png" alt="Men's Size" class="mx-auto w-100 h-auto">
+      </div>
+      <div class="col-lg-6 col-sm-12 m-auto mt-sm-2">
+        <table class="table table-bordered table-hover mb-0">
+          <thead>
+            <tr class="text-center bg-success bg-opacity-50">
+              <th scope="col">MENS SIZES</th>
+              <th scope="col">S</th>
+              <th scope="col">M</th>
+              <th scope="col">L</th>
+              <th scope="col">XL</th>
+              <th scope="col">2XL</th>
+              <th scope="col">3XL</th>
+            </tr>
+          </thead>
+          <tbody class="text-center align-items-center">
+            <tr>
+              <th>COLLAR</th>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <th scope="row">SHOULDER</th>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th scope="row">CHEST, WAIST, HIPS
+                <p class="size-text fw-lighter">(4 inches allowance included)</p>
+              </th>
+              <td>42-43</td>
+              <td>44-45</td>
+              <td>46-47</td>
+              <td>48-49</td>
+              <td>50-51</td>
+              <td>52-53</td>
+            </tr>
+            <tr>
+              <th scope="row">CUFF</th>
+              <td>8</td>
+              <td>8.5</td>
+              <td>9</td>
+              <td>9.5</td>
+              <td>10</td>
+              <td>10.5</td>
+            </tr>
+            <tr>
+              <th scope="row">SHORT-SLEEVE LENGTH</th>
+              <td>10</td>
+              <td>10.5</td>
+              <td>11</td>
+              <td>11.5</td>
+              <td>12</td>
+              <td>12.5</td>
+            </tr>
+            <tr>
+              <th scope="row">LONG SLEEVE LENGTH</th>
+              <td>23</td>
+              <td>23.5</td>
+              <td>24</td>
+              <td>24.5</td>
+              <td>25</td>
+              <td>25.5</td>
+            </tr>
+            <tr>
+              <th scope="row">ARM HOLE</th>
+              <td>20</td>
+              <td>20.5</td>
+              <td>21</td>
+              <td>21.5</td>
+              <td>22</td>
+              <td>22.5</td>
+            </tr>
+            <tr>
+              <th scope="row">BACK LENGTH</th>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+              <td>32</td>
+              <td>33</td>
+              <td>34</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="size-text mt-5 mb-0 border-bottom">
+      <h5>Instruction for Women's Size:</h5>
+      <p>Remember your actual measurements should be <span class="fw-bold">2 inches smaller</span> (Chest, Waist, Hips)
+        than what is written above and you can provide us your height.</p>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6 col-sm-12">
+        <img src="Images/women-size.png" alt="Women's Size" class="mx-auto w-100 h-auto p-4">
+      </div>
+      <div class="col-lg-6 col-sm-12 mx-auto">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="text-center bg-success bg-opacity-50">
+              <th scope="col">WOMENS SIZES</th>
+              <th scope="col">S</th>
+              <th scope="col">M</th>
+              <th scope="col">L</th>
+              <th scope="col">XL</th>
+              <th scope="col">2XL</th>
+              <th scope="col">3XL</th>
+              <th scope="col">4XL</th>
+            </tr>
+          </thead>
+          <tbody class="text-center align-items-center">
+            <tr>
+              <th>BUST</th>
+              <td>34</td>
+              <td>36</td>
+              <td>38</td>
+              <td>40</td>
+              <td>42</td>
+              <td>44</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <th scope="row">WAIST</th>
+              <td>27-28</td>
+              <td>29-30</td>
+              <td>31-32</td>
+              <td>33-34</td>
+              <td>35-36</td>
+              <td>37-38</td>
+              <td>39-40</td>
+            </tr>
+            <tr>
+              <th scope="row">HIPS</th>
+              <td>34</td>
+              <td>36</td>
+              <td>38</td>
+              <td>40</td>
+              <td>42</td>
+              <td>44</td>
+              <td>46</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row mt-5 border-top">
+      <div class="col-12 w-70 mx-auto">
+        <table class="table table-sm table-bordered table-hover mt-4">
+          <thead>
+            <tr class="text-center bg-success bg-opacity-50">
+              <th scope="col">KIDS BARONG SIZE CHART (IN INCHES)</th>
+              <th scope="col">NECK</th>
+              <th scope="col">SHOULDER</th>
+              <th scope="col">BACK L</th>
+              <th scope="col">CHEST/WAIST/HIPS</th>
+              <th scope="col">ARM HOLE</th>
+              <th scope="col">BICEP</th>
+              <th scope="col">WRIST</th>
+              <th scope="col">SLEEVE</th>
+            </tr>
+          </thead>
+          <tbody class="text-center align-items-center">
+            <tr>
+              <th>#0 (UP TO 1 YR OLD)</th>
+              <td>13</td>
+              <td>11.5</td>
+              <td>16</td>
+              <td>28</td>
+              <td>14</td>
+              <td>10</td>
+              <td>6</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th scope="row">#2 (1-2 YRS. OLD)</th>
+              <td>13</td>
+              <td>12</td>
+              <td>17</td>
+              <td>29</td>
+              <td>14.5</td>
+              <td>10.5</td>
+              <td>6</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th scope="row">#4 (3-4 YRS. OLD)</th>
+              <td>13.5</td>
+              <td>12.5</td>
+              <td>18</td>
+              <td>30</td>
+              <td>15</td>
+              <td>11</td>
+              <td>6.5</td>
+              <td>15.5</td>
+            </tr>
+            <tr>
+              <th scope="row">#6 (5-6 YRS. OLD)</th>
+              <td>13.5</td>
+              <td>13</td>
+              <td>19</td>
+              <td>31</td>
+              <td>15.5</td>
+              <td>11.5</td>
+              <td>7</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <th scope="row">#8 (7 YRS. OLD)</th>
+              <td>14.5</td>
+              <td>13.5</td>
+              <td>20</td>
+              <td>32</td>
+              <td>16</td>
+              <td>12</td>
+              <td>7</td>
+              <td>16.5</td>
+            </tr>
+            <tr>
+              <th scope="row">#10 (8 YRS. OLD)</th>
+              <td>14.5</td>
+              <td>14</td>
+              <td>21</td>
+              <td>33</td>
+              <td>16.5</td>
+              <td>12.5</td>
+              <td>7</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th scope="row">#12 (9 YRS. OLD)</th>
+              <td>15</td>
+              <td>15</td>
+              <td>22</td>
+              <td>34</td>
+              <td>17</td>
+              <td>13</td>
+              <td>7.5</td>
+              <td>17.5</td>
+            </tr>
+            <tr>
+              <th scope="row">#14 (10 YRS. OLD)</th>
+              <td>15</td>
+              <td>15.5</td>
+              <td>23</td>
+              <td>36</td>
+              <td>17.5</td>
+              <td>13.5</td>
+              <td>7.5</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <th scope="row">#16 (11 YRS. OLD)</th>
+              <td>15.5</td>
+              <td>16</td>
+              <td>24</td>
+              <td>37</td>
+              <td>18</td>
+              <td>14</td>
+              <td>7.5</td>
+              <td>18.5</td>
+            </tr>
+            <tr>
+              <th scope="row">#18 (12 YRS. OLD)</th>
+              <td>15.5</td>
+              <td>17</td>
+              <td>25</td>
+              <td>39</td>
+              <td>19</td>
+              <td>14.5</td>
+              <td>8</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <th scope="row">#20 (13 YRS. OLD)</th>
+              <td>16</td>
+              <td>18</td>
+              <td>27</td>
+              <td>40</td>
+              <td>20</td>
+              <td>15</td>
+              <td>8</td>
+              <td>20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Newsletter -->
+  <div class="news container-fluid align-items-center p-lg-5 p-5">
+    <div class="news-content w-100">
+      <p class="msg-1 lead mb-1">Subscribe for news on our latest arrivals, exclusive promotions and events.</p>
+      <p class="msg-1 sub-text">Never miss out on exclusive launches, styles, and promotions.</p>
+    </div>
+
+    <div class="news-content w-100">
+      <form action="" class="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Email">
+          <span class="input-group-text" id="btn-popup">Subscribe</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid">
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="col-lg-4 border-top border-end border-dark border-opacity-25 text-center p-lg-5 p-3">
+          <p class="footer-title lead" style="font-weight: 500;">Payák Kasuotan</p>
+          <p class="footer-sub-title"><a href="#">payakkasuotan@pk.com</a></p>
+          <p class="footer-sub-title">(888) 555-0012</p>
+        </div>
+        <div class="col-lg-8 border-top border-dark border-opacity-25">
+          <div class="row p-3 p-lg-4 ms-sm-3 text-center text-lg-start">
+            <div class="col-lg-4">
+              <p class="footer-title lead">Shop</p>
+              <p class="footer-sub-title"><a href="#">New</a></p>
+              <p class="footer-sub-title"><a href="#">Men</a></p>
+              <p class="footer-sub-title"><a href="#">Women</a></p>
+            </div>
+            <div class="col-lg-4">
+              <p class="footer-title lead">Our Store</p>
+              <p class="footer-sub-title"><a href="#">Brand Identity</a></p>
+              <p class="footer-sub-title"><a href="#">FAQ</a></p>
+            </div>
+            <div class="col-lg-4">
+              <p class="footer-title lead">Terms & Condition</p>
+              <p class="footer-sub-title"><a href="#">Store Policy</a></p>
+              <p class="footer-sub-title"><a href="#">Shipping & Return</a></p>
+              <p class="footer-sub-title"><a href="#">Payment Methods</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="footer-icons col-lg-4 border-top border-end border-dark border-opacity-25 text-center p-lg-3 p-3">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </div>
+        <div
+          class="col-lg-8 border-top border-dark border-opacity-25 d-flex justify-content-center align-items-center text-center pt-lg-3 p-2">
+          <p class="fs-5">&copy;Payák Kasuotan 2022</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Custom js -->
+  <script src="JS/script.js"></script>
+  <script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    })
+  </script>
+
+  <!-- JQUERY -->
+  <script src="JS/jquery-3.6.1.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
